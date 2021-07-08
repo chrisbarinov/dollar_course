@@ -1,0 +1,26 @@
+<h1>Установить курс доллара</h1>
+<%= form_with url: "/admin", model: @dollar_course, method: :post do |form| %>
+  <div>
+    <%= form.label :course, "Курс доллара" %><br>
+    <%= form.number_field :course, step: :any%>
+    <% if !@dollar_course.nil?%>
+      <% @dollar_course.errors.full_messages_for(:course).each do |message| %>
+        <div class="alert alert-danger" role="alert"><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :active_to, "Действителен до" %><br>
+    <%= form.datetime_field :active_to %>
+    <% if !@dollar_course.nil?%>
+      <% @dollar_course.errors.full_messages_for(:active_to).each do |message| %>
+        <div class="alert alert-danger" role="alert"><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

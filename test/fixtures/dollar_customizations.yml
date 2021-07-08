@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: 1.5
+  active_to: 2021-06-23 21:06:51
+
+two:
+  course: 1.5
+  active_to: 2021-06-23 21:06:51
