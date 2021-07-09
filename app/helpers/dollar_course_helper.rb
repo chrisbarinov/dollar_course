@@ -4,7 +4,7 @@ module DollarCourseHelper
     require 'open-uri'
     html = open(url)
     doc = Nokogiri::HTML(html)
-    return doc.css(selector)[0].text
+    return doc.css(selector)[0].text.strip
   end
 
   def get_dollar_course
